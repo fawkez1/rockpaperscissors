@@ -1,0 +1,12 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.inputBox {
+    width: 200px;
+    height: 40px;
+}
+.outputBox {
+    width: 208px;
+    height: 45px;
+    background-color: lightblue;
+}
