@@ -4,6 +4,7 @@ let computerSelection;
 
 const inputBoxValue = document.querySelector(".inputBox");
 const outputBoxValue = document.querySelector(".outputBox");
+const confirmButton = document.querySelector("#confirmButton");
 
 confirmButton.addEventListener("click", function () {
     let playerSelection = inputBoxValue.value;
