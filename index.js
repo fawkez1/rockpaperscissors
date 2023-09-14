@@ -1,30 +1,30 @@
 let playerSelection;
 let computerSelection;
 
-console.log(computerSelection);
 
 const inputBoxValue = document.querySelector(".inputBox");
 const outputBoxValue = document.querySelector(".outputBox");
 
-inputBoxValue.addEventListener("change", function () {
-    playerSelection = inputBoxValue.value;
-    const result = playRound(playerSelection, computerSelection);
+confirmButton.addEventListener("click", function () {
+    let playerSelection = inputBoxValue.value;
+    let result = playRound(playerSelection, computerSelection);
     outputBoxValue.textContent = result;
 })
 
 function computerRPS () {
+    //boolean, if true, function starts
     if (playerSelection)  {
         let randomNum = Math.floor(Math.random() * 3) + 1;
     
 
         if (randomNum === 1) {
-            let computerSelection = "ROCK";
+             computerSelection = "ROCK";
         }
         else if (randomNum === 2) {
-            let computerSelection = "PAPER";
+             computerSelection = "PAPER";
         }
         else if (randomNum === 3) {
-            let computerSelection = "SCISSORS";
+             computerSelection = "SCISSORS";
         }
         console.log("Computer's choice: " + computerSelection);
     }
@@ -34,6 +34,8 @@ function computerRPS () {
 
 
 function playRound (playerSelection, computerSelection) {
+
+        let result;
 
         // Player chooses ROCK
         if (playerSelection == "ROCK" && computerSelection == "ROCK") {
@@ -67,4 +69,6 @@ function playRound (playerSelection, computerSelection) {
         else if (playerSelection == "SCISSORS" && computerSelection == "SCISSORS") {
             result = "It's a tie. Go again.";
         }
+
+        return result;
     }
