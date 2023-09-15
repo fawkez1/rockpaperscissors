@@ -6,12 +6,27 @@ const inputBoxValue = document.querySelector(".inputBox");
 const outputBoxValue = document.querySelector(".outputBox");
 const confirmButton = document.querySelector("#confirmButton");
 
+
+
+confirmButton.addEventListener("click", function () {
+    //.trim() erases all empty content, like spaces.
+    // .toUpperCase() changes input to only uppercase letters
+    let userInput = inputBoxValue.value.trim().toUpperCase(); 
+    if (isValidSelection(userInput)) {
+    playerSelection = userInput;
+    let result = playRound(playerSelection, computerSelection);
+    outputBoxValue.textContent = result;
+    } else {
+    alert("Ungültige Eingabe. Bitte wähle ROCK, PAPER oder SCISSORS.");
+    }
+    })
+/* old code for eventlistener
 confirmButton.addEventListener("click", function () {
     let playerSelection = inputBoxValue.value;
     let result = playRound(playerSelection, computerSelection);
     outputBoxValue.textContent = result;
 })
-
+*/
 function computerRPS () {
     //boolean, if true, function starts
     if (playerSelection)  {
@@ -33,7 +48,7 @@ function computerRPS () {
 
 
 
-
+/*
 function playRound (playerSelection, computerSelection) {
 
         let result;
@@ -73,4 +88,46 @@ function playRound (playerSelection, computerSelection) {
 
         return result;
     }
+*/
+   // switch
+
+   function playRound(playerSelection, computerSelection) {
+    let result;
+
+    switch (true) {
+        case playerSelection === computerSelection:
+            result = "It's a tie. Go again.";
+            break;
+
+        case playerSelection === "ROCK" && computerSelection === "PAPER":
+            result = "You lost. Paper beats Rock.";
+            break;
+
+        case playerSelection === "ROCK" && computerSelection === "SCISSORS":
+            result = "You won. Rock beats Scissors.";
+            break;
+
+        case playerSelection === "PAPER" && computerSelection === "ROCK":
+            result = "You won. Paper beats Rock.";
+            break;
+
+        case playerSelection === "PAPER" && computerSelection === "SCISSORS":
+            result = "You lost. Scissors beat Paper.";
+            break;
+
+        case playerSelection === "SCISSORS" && computerSelection === "ROCK":
+            result = "You lost. Rock beats Scissors.";
+            break;
+
+        case playerSelection === "SCISSORS" && computerSelection === "PAPER":
+            result = "You won. Scissors beat Paper.";
+            break;
+
+        default:
+            result = "Invalid selection. Please choose ROCK, PAPER, or SCISSORS.";
+    }
+
+    return result;
+}
+
     
