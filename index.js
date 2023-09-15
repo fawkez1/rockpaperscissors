@@ -1,6 +1,5 @@
-let playerSelection;
-let computerSelection;
-
+let playerSelection = null;
+let computerSelection = null;
 
 const inputBoxValue = document.querySelector(".inputBox");
 const outputBoxValue = document.querySelector(".outputBox");
@@ -17,21 +16,25 @@ confirmButton.addEventListener("click", function () {
     let result = playRound(playerSelection, computerSelection);
     outputBoxValue.textContent = result;
     } else {
-    alert("Ungültige Eingabe. Bitte wähle ROCK, PAPER oder SCISSORS.");
-    }
+        outputBoxValue.textContent = ("Invalid input, please choose ROCK, PAPER or SCISSORS.");
+    } 
+    
+
+    function isValidSelection(userInput){
+        return userInput === "ROCK" || userInput === "PAPER" || userInput === "SCISSORS";
+    } 
+    console.log(isValidSelection(userInput))
     })
-/* old code for eventlistener
-confirmButton.addEventListener("click", function () {
-    let playerSelection = inputBoxValue.value;
-    let result = playRound(playerSelection, computerSelection);
-    outputBoxValue.textContent = result;
-})
-*/
+   
+    
+
+
+// computer chooses rock, paper or scissors
 function computerRPS () {
     //boolean, if true, function starts
     if (playerSelection)  {
         let randomNum = Math.floor(Math.random() * 3) + 1;
-    
+    console.log(playerSelection)
 
         if (randomNum === 1) {
              computerSelection = "ROCK";
