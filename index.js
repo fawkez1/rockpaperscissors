@@ -4,25 +4,29 @@ let computerSelection = null;
 const inputBoxValue = document.querySelector(".inputBox");
 const outputBoxValue = document.querySelector(".outputBox");
 const confirmButton = document.querySelector("#confirmButton");
+const gamestatus = document.querySelector(".gamestatus");
 
 
-
+// user starts game by clicking.
 confirmButton.addEventListener("click", function () {
+
     //.trim() erases all empty content, like spaces.
     // .toUpperCase() changes input to only uppercase letters
     let userInput = inputBoxValue.value.trim().toUpperCase(); 
     if (isValidSelection(userInput)) {
     playerSelection = userInput;
-    // HIER LAG DER HASE IM PFEFFER!!!!!!!!!!!!!!!!!!!!!!!
+
+    //starts the computer selection
     computerRPS(playerSelection);
-    // computerRPS WURDE HIER NICHT AUSGELOEST UND SOMIT WURDEN KEINE WERTE UEBERGEBEN
+
+    // game starts with userselection and computerselection
     let result = playRound(playerSelection, computerSelection);
     outputBoxValue.textContent = result;
     } else {
         outputBoxValue.textContent = ("Invalid input, please choose ROCK, PAPER or SCISSORS.");
     } 
     
-
+// functions checks userinput, if valid/true, returns to line 16/17
     function isValidSelection(userInput){
         return userInput === "ROCK" || userInput === "PAPER" || userInput === "SCISSORS";
     } 
