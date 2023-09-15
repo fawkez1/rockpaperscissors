@@ -13,6 +13,9 @@ confirmButton.addEventListener("click", function () {
     let userInput = inputBoxValue.value.trim().toUpperCase(); 
     if (isValidSelection(userInput)) {
     playerSelection = userInput;
+    // HIER LAG DER HASE IM PFEFFER!!!!!!!!!!!!!!!!!!!!!!!
+    computerRPS(playerSelection);
+    // computerRPS WURDE HIER NICHT AUSGELOEST UND SOMIT WURDEN KEINE WERTE UEBERGEBEN
     let result = playRound(playerSelection, computerSelection);
     outputBoxValue.textContent = result;
     } else {
@@ -32,10 +35,8 @@ confirmButton.addEventListener("click", function () {
 // computer chooses rock, paper or scissors
 function computerRPS () {
     //boolean, if true, function starts
-    if (playerSelection)  {
+    if (playerSelection === "ROCK" || "PAPER" || "SCISSORS")  {
         let randomNum = Math.floor(Math.random() * 3) + 1;
-    console.log(playerSelection)
-
         if (randomNum === 1) {
              computerSelection = "ROCK";
         }
@@ -51,51 +52,9 @@ function computerRPS () {
 
 
 
-/*
-function playRound (playerSelection, computerSelection) {
-
-        let result;
-
-        // Player chooses ROCK
-        if (playerSelection == "ROCK" && computerSelection == "ROCK") {
-            result = "It's a tie. Go again.";
-        }
-        else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
-            result = "You lost. Paper beats Rock.";
-        }
-        else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
-            result = "You won. Rock beats Scissors.";
-        }
-
-        // Player chooses PAPER
-        else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
-            result = "You won. Paper beats Rock.";
-        }
-        else if (playerSelection == "PAPER" && computerSelection == "PAPER") {
-            result = "It's a tie. Go again";
-        }
-        else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
-            result = "You lost. Scissors beat Paper.";
-        }
-
-        // Player chooses SCISSORS
-        else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
-            result = "You lost. Rock beats Scissors."
-        }
-        else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
-            result = "You won. Scissors beat Paper.";
-        }
-        else if (playerSelection == "SCISSORS" && computerSelection == "SCISSORS") {
-            result = "It's a tie. Go again.";
-        }
-
-        return result;
-    }
-*/
-   // switch
-
    function playRound(playerSelection, computerSelection) {
-    let result;
+
+
 
     switch (true) {
         case playerSelection === computerSelection:
@@ -129,7 +88,7 @@ function playRound (playerSelection, computerSelection) {
         default:
             result = "Invalid selection. Please choose ROCK, PAPER, or SCISSORS.";
     }
-
+    console.log(computerSelection)
     return result;
 }
 
