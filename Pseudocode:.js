@@ -56,3 +56,52 @@ function playRound:
 
             Wenn user(SCISSORS) UND computer SCISSORS  
             DANN result an alarmBox: "It's a tie. Go again."
+
+
+
+
+
+/*
+function playRound (playerSelection, computerSelection) {
+
+        let result;
+
+        // Player chooses ROCK
+        if (playerSelection == "ROCK" && computerSelection == "ROCK") {
+            result = "It's a tie. Go again.";
+        }
+        else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
+            result = "You lost. Paper beats Rock.";
+        }
+        else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
+            result = "You won. Rock beats Scissors.";
+        }
+
+        // Player chooses PAPER
+        else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
+            result = "You won. Paper beats Rock.";
+        }
+        else if (playerSelection == "PAPER" && computerSelection == "PAPER") {
+            result = "It's a tie. Go again";
+        }
+        else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
+            result = "You lost. Scissors beat Paper.";
+        }
+
+        // Player chooses SCISSORS
+        else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
+            result = "You lost. Rock beats Scissors."
+        }
+        else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
+            result = "You won. Scissors beat Paper.";
+        }
+        else if (playerSelection == "SCISSORS" && computerSelection == "SCISSORS") {
+            result = "It's a tie. Go again.";
+        }
+
+        return result;
+    }
+*/
+   // switch
+
+

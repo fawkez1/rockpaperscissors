@@ -6,13 +6,27 @@ body {
     height: 40px;
 }
 .outputBox {
-    width: 280px;
+    margin-top: 0;
+    width: 290px;
     height: 80px;
     background-color: lightblue;
 }
 .gamestatus {
-    width: 200px;
-    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    width: 290px;
+    height: 70px;
     background-color: lightcoral;
+}
+.weapons {
+    padding: 5px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    width: 280px;
+    height: 50px;
+    background-color: lightcoral;
+    text-align: center;
+}
+
 
     
